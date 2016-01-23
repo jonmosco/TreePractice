@@ -8,17 +8,17 @@ public class Ex2 {
 		@SuppressWarnings({ "unchecked", "rawtypes" })
 		public static void main(String args[]) {
 			
-			BinaryTreeNode<Long> n = new BinaryTreeNode(23); 
-			BinaryTreeNode<Long> root = new BinaryTreeNode(23);
+			BinaryTreeNode<Long> n = new BinaryTreeNode(23L); 
+			BinaryTreeNode<Long> root = new BinaryTreeNode(23L);
 			
-			n = new BinaryTreeNode(8);
-			n.setLeftChild(new BinaryTreeNode(56));
-			n.setLeftChild(new BinaryTreeNode(2));
+			n = new BinaryTreeNode(8L);
+			n.setLeftChild(new BinaryTreeNode(56L));
+			n.setLeftChild(new BinaryTreeNode(2L));
 			root.setLeftChild(n);
 			
-			n = new BinaryTreeNode(7);
-			n.setLeftChild(new BinaryTreeNode(24));
-			n.setLeftChild(new BinaryTreeNode(3));
+			n = new BinaryTreeNode(7L);
+			n.setLeftChild(new BinaryTreeNode(24L));
+			n.setLeftChild(new BinaryTreeNode(3L));
 			root.setRightChild(n);
 
 			System.out.println("displaying tree:");
