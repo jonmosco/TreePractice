@@ -77,13 +77,64 @@ public class Ex2 {
 		}
 
 		public static Long minTree(BinaryTreeNode<Long> node) {
-			Long min = new Long(0);
+			
+			Long min = new Long(node.getData());
+			
+			if (node != null) {
+				if (node.getLeftChild() != null) {
+					min = minNum(min, minTree(node.getLeftChild()));
+				}
+				if (node.getRightChild() != null) {
+					min = minNum(min, minTree(node.getRightChild()));
+				}
+				if (node.getData() != null) {
+					min = minNum(min, node.getData());
+				}
+			}
+			
+			//min = minNum(minNum(longLeftNode, longRightNode), rootNode);
+
 			return min;
 		}
 
 		public static Long maxTree(BinaryTreeNode<Long> node) {
-			Long max = new Long(0);
+			Long max = new Long(node.getData());
+			
+			if (node != null) {
+				if (node.getLeftChild() != null) {
+					max = maxNum(max, maxTree(node.getLeftChild()));
+				}
+				if (node.getRightChild() != null) {
+					max = maxNum(max, maxTree(node.getRightChild()));
+				}
+				if (node.getData() != null) {
+					max = maxNum(max, node.getData());
+				}
+			}
+			
 			return max;
 		}
+	}
+	
+	public static Long minNum(Long a, Long b) {
+		Long minNumber = 0L;
+		
+		if (a < b) {
+			minNumber = a;
+		} else {
+			minNumber = b;
+		}
+		return minNumber;
+	}
+	
+	public static Long maxNum(Long a, Long b) {
+		Long maxNumber = 0L;
+		
+		if (a > b) {
+			maxNumber = a;
+		} else {
+			maxNumber = b;
+		}
+		return maxNumber;
 	}
 }
